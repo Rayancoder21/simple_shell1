@@ -1,20 +1,27 @@
 #include "Main.h"
 #include <sys/wait.h>
 #include <sys/types.h>
+#define EXIT_COMMAND "exit"
 
-/*
-*Rere_executeCommand - function to execute command
+/**
+*rere_executeCommand - function to execute command
+*@rere: parameter
 *Return: nothing
 */
-void Rere_executeCommand(const char *command)
+
+void rere_executeCommand(const char *rere)
 {
 	pid_t pid = fork();
 
+	if (strcmp(rere, EXIT_COMMAND) == 0)
+	{
+		exit(EXIT_SUCCESS);
+	}
 	if (pid == 0)
 	{
 		int argCountRere = 0;
 		char *args[200];
-		char *token_Arg = strtok((char *)command, " ");
+		char *token_Arg = strtok((char *)rere, " ");
 
 		while (token_Arg != NULL)
 		{
@@ -23,7 +30,7 @@ void Rere_executeCommand(const char *command)
 		}
 		args[argCountRere] = NULL;
 		execvp(args[0], args);
-		_rere_printf_shellllo("Error_command\n");
+		_rere_printf_shellllo("./shell: No such file or directory\n");
 		exit(EXIT_FAILURE);
 	}
 	else if (pid == -1)

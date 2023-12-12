@@ -1,6 +1,7 @@
 #include "Main.h"
-/*
+/**
 * _rere_printf_shellllo - function that print output
+* @my_rere: parameter
 * Returns: nothing
 */
 void _rere_printf_shellllo(const char *my_rere)

@@ -1,14 +1,14 @@
 #include "Main.h"
 
-/*
- * input_reader - Reads and processes user input.
+/**
+ * re_re_input - Reads and processes user input.
  *
  * @buffer: Pointer to a character buffer to store the user input.
  * @size: Size of the buffer in bytes.
  *
- * Returns: Nothing.
+ * Return: Nothing.
  */
-void input_reader(char *buffer, size_t size)
+void re_re_input(char *buffer, size_t size)
 {
 	if (!fgets(buffer, size, stdin))
 	{
@@ -23,6 +23,5 @@ void input_reader(char *buffer, size_t size)
 			exit(EXIT_FAILURE);
 		}
 	}
-	/* Remove trailing newline character. */
 	buffer[strcspn(buffer, "\n")] = '\0';
 }

@@ -9,7 +9,7 @@
 void _rere_printf_shellllo(const char *my_rere);
 void rere_infinite_prompt(void);
 void re_re_input(char *rere, size_t size);
-void re_re_execute(const char *rere);
+void rere_executeCommand(const char *rere);
 int main(void);
 
 #endif

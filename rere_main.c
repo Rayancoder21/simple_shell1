@@ -1,17 +1,17 @@
 #include "Main.h"
-/*
+/**
 * main - entry point
 * Return: nothing
 **/
 int main(void)
 {
-	char *args[128];
+	char command[120];
 
 	while (true)
 	{
 		rere_infinite_prompt();
-		Rere_executeCommand(const char *command);
-		re_re_input(char *rere, size_t size);
+		re_re_input(command, sizeof(command));
+		rere_executeCommand(command);
 	}
 	return (0);
 }
