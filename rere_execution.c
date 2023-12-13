@@ -30,7 +30,7 @@ void rere_executeCommand(const char *rere)
 		}
 		args[argCountRere] = NULL;
 		execvp(args[0], args);
-		_rere_printf_shellllo("./shell: No such file or directory\n");
+		_rere_printf_shellllo(" No such file or directory\n");
 		exit(EXIT_FAILURE);
 	}
 	else if (pid == -1)
