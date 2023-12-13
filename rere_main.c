@@ -11,7 +11,7 @@ int main(void)
 	{
 		rere_infinite_prompt();
 		re_re_input(command, sizeof(command));
-		execute_command((command);
+		execute_command(command);
 	}
 	return (0);
 }
