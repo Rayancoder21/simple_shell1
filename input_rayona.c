@@ -1,16 +1,17 @@
 #include "Main.h"
 
 /**
- * re_re_input - Reads and processes user input.
+ * read_command - Reads and processes user input.
  *
- * @buffer: Pointer to a character buffer to store the user input.
+ * @command: Pointer to a character buffer to store the user input.
  * @size: Size of the buffer in bytes.
  *
  * Return: Nothing.
  */
-void re_re_input(char *buffer, size_t size)
+
+void read_command(char *command, size_t size)
 {
-	if (!fgets(buffer, size, stdin))
+	if (fgets(command, size, stdin) == NULL)
 	{
 		if (feof(stdin))
 		{
@@ -19,9 +20,9 @@ void re_re_input(char *buffer, size_t size)
 		}
 		else
 		{
-			_rere_printf_shellllo("Error reading input.\n");
+			_rere_printf_shellllo("Error while reading input.\n");
 			exit(EXIT_FAILURE);
 		}
 	}
-	buffer[strcspn(buffer, "\n")] = '\0';
+	command[strcspn(command, "\n")] = '\0';
 }
