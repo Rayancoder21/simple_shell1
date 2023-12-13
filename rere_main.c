@@ -4,7 +4,7 @@
 * main - entry point
 * @command: parameter
 * Return: nothing
-**/
+*/
 int main(void)
 {
 	char command[120];
